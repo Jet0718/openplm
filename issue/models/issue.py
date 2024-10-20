@@ -47,7 +47,7 @@ class IssueModel(models.Model):
     dco_id =fields.Many2many('dco',string='关联DCO')
     pco_id =fields.Many2many('pco',string='关联PCO')
     #增加栏位 2024.9.25 Herbert增加
-    solution =fields.Text("解决方案")
+    # solution =fields.Text("解决方案")
     vresults =fields.Selection(
         string="验证结果",
         selection=[('Acceptable','可接受'),('Observed','待观察')]
@@ -60,6 +60,7 @@ class IssueModel(models.Model):
     d6 =fields.Text("D6执行问题改善")
     d7 =fields.Text("D7预防再发")
     team_id =fields.Many2many('res.users',string='团队人员')
+    issue_image = fields.Image('圖片',max_width=128,max_height=128)
     
     # #上传单个档案写法
     # binary_field = fields.Binary("档案")

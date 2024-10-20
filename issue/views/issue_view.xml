@@ -31,7 +31,7 @@
                 <field name="project_id" string="关联专案"/>
                 <field name="dco_id" string="关联DCO"/> 
                 <field name="pco_id" string="关联PCO"/> 
-                <field name="solution" string="解决方案"/> 
+                <!-- <field name="solution" string="解决方案"/>  -->
                 <field name="vresults" string="验证结果"/>  
                 <!-- 2024.10.12 Herbert增加内容      -->
                 <field name="d3" string="D3抑制措施"/>
@@ -59,37 +59,46 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="item_number"  string="问题編號"/>
-                            <field name="title"  string="问题主旨"/>
-                            <field name="issue_Source" string="问题来源" widget ="radio"/>
-                            <field name="owner_id" string="问题回报人"/>
-                            <field name="custoomer_id" string="受影响客户"/>
-                            <field name="priority" string="优先级" widget="priority"/>
-                            <field name="respond" string="回应" widget ="radio"/>
-                            <field name="issue_code_ids" string="问题编码" widget="many2many_tags"/>                            
-                            <!-- <field name="state" string="状态"/>                -->
-                            <field name="project_id" string="关联专案"/>
-                            <field name="issue_product_id" string="问题产品"/>
-                            <field name="issue_bom_id" string="问题物料清单"/>                            
-                            <field name="external_number" string="外部单号"/>
-                            <field name="quantity" string="数量"/>
+                            <group>
+                                <field name="item_number"  string="问题編號"/>
+                                <field name="title"  string="问题主旨"/>
+                                <field name="issue_Source" string="问题来源" widget ="radio"/>
+                                <field name="owner_id" string="问题回报人"/>
+                                <field name="custoomer_id" string="受影响客户"/>
+                                <field name="priority" string="优先级" widget="priority"/>
+                                <field name="respond" string="回应" widget ="radio"/>
+                                <field name="issue_code_ids" string="问题编码" widget="many2many_tags"/>                            
+                                <!-- <field name="state" string="状态"/>                -->
+                                <field name="project_id" string="关联专案"/>
+                            </group>
+                            <group>
+                                <field name="issue_product_id" string="问题产品"/>
+                                <field name="issue_bom_id" string="问题物料清单"/>                            
+                                <field name="external_number" string="外部单号"/>
+                                <field name="quantity" string="数量"/>
+                                <field name="description" string="问题描述"/>
+                                <field name="issue_stage" string="问题发生阶段"/>
+                                <field name="environmental" string="环境说明"/>
+                                <field name="reproduce" string="重现操作顺序"/>
+                            </group>
                         </group>
                         <group>
-                            <!-- 2024.9.25 Herbert增加内容      -->
-                            <!-- <field name="dco_id" string="关联DCO"/>  -->
-                            <!-- <field name="pco_id" string="关联PCO"/>  -->
-                            <field name="description" string="问题描述"/>
-                            <field name="issue_stage" string="问题发生阶段"/>
-                            <field name="environmental" string="环境说明"/>
-                            <field name="reproduce" string="重现操作顺序"/>
-                            <field name="solution" string="解决方案"/> 
-                            <field name="vresults" string="验证结果"/>
-                            <!-- 2024.10.12 Herbert增加内容      -->
-                            <field name="d3" string="D3抑制措施"/>
-                            <field name="d4" string="D4原因分析"/>  
-                            <field name="d5" string="D5纠正措施"/>                  
-                            <field name="d6" string="D6执行问题改善"/>                  
-                            <field name="d7" string="D7预防再发"/>                           
+                            <group>
+                                <!-- 2024.9.25 Herbert增加内容      -->
+                                <!-- <field name="dco_id" string="关联DCO"/>  -->
+                                <!-- <field name="pco_id" string="关联PCO"/>  -->
+                                <!-- <field name="solution" string="解决方案"/>  -->
+                                <!-- 2024.10.12 Herbert增加内容      -->
+                                <field name="d3" string="D3抑制措施"/>
+                                <field name="d4" string="D4原因分析"/>  
+                                <field name="d5" string="D5纠正措施"/>                  
+                                <field name="d6" string="D6执行问题改善"/>                  
+                                <field name="d7" string="D7预防再发"/> 
+                                <field name="vresults" string="验证结果"/> 
+                            </group>      
+                            <group>    
+                                <field name="issue_image" widget="image" class="oe_avatar" nolabel="1"/>                
+                            </group>                   
                         </group>
                     </group>
                     <notebook>
